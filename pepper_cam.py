@@ -5,18 +5,20 @@ import cv2
 import time
 from qibullet import SimulationManager
 from qibullet import PepperVirtual
-from pynput.keyboard import Key, Listener
 
 
-#global
+
+#global variable
 flag_pic=0
 totem_x=[1,2,3]
 totem1=0
 totem2=0
 totem3=0
+score=0.5
 
 def main():
-    image_name='image.png'
+    image_name='image.png' 
+
     simulation_manager = SimulationManager()
     client = simulation_manager.launchSimulation(gui=True)
     pepper = simulation_manager.spawnPepper(client, spawn_ground_plane=True) 
@@ -27,27 +29,28 @@ def main():
     time.sleep(1)
     #pepper.goToPosture("StandZero", 0.6)
     #time.sleep(1)
-    flag_pic=0
+    flag_pic=0 #flag to launch the image recognition
     while True:
-        img = pepper.getCameraFrame()
-        cv2.imshow("bottom camera", img)
+        img = pepper.getCameraFrame() #capture camera frame
+        cv2.imshow("bottom camera", img) #show the capture
         cv2.waitKey(1)
-	flag_pic=flag_pic+1
-	if flag_pic==10:
-	    print('photo taken')
+	flag_pic=flag_pic+1 #debug flag
+	if flag_pic==10: 
+	    print('photo taken') #debug
 	    flag_pic=0
-	    cv2.imwrite(image_name,img)
-	    result=Algo_detect(image_name)
+	    cv2.imwrite(image_name,img) #write the image in the current directory
+	    result=Algo_detect(image_name,score)#COCO detection
 	    
    
 
-def Algo_detect(photo_name):
+def Algo_detect(photo_name,score):
 	import Algorithmia
 	from Algorithmia.acl import ReadAcl, AclType
-	apiKey = "simUb6EKrYK8xAnJp1gUqqhzTQm1"
+	
+	apiKey = "simUb6EKrYK8xAnJp1gUqqhzTQm1" 
 	# Create the Algorithmia client
 	client = Algorithmia.client(apiKey)
-
+	
 	# Set your Data URI
 	nlp_directory = client.dir("data://patate2cherie/nlp_directory")
 	# Create your data collection if it does not exist
@@ -73,15 +76,15 @@ def Algo_detect(photo_name):
 	    input = {
 	  "image":img_file,
 	  "output":"data://.algo/deeplearning/ObjectDetectionCOCO/temp/"+photo_name,
-	  "min_score":0.5,
+	  "min_score":score,
 	  "model":"ssd_mobilenet_v1"
 	}
-	# Create the algorithm object using the Summarizer algorithm
+	# Create the algorithm object using the COCO algorithm
 	algo = client.algo("deeplearning/ObjectDetectionCOCO/0.2.1")
 	#algo.set_option(timeout=300)
 	# Pass in input required by algorithm
 	try:
-	    # Get the summary result of your file's contents
+	    # Get the result of your file's contents
 	    result=algo.pipe(input).result
 	    print(result)
 	except Exception as error:
