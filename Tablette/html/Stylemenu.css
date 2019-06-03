@@ -1,0 +1,74 @@
+
+
+
+.head {
+
+  background-color:#AFEEEE;
+  padding:3em;
+  margin-bottom:20px;
+  color: grey;
+  text-align:center;
+}
+
+.head h1{
+    text-shadow : 10px 1px 10px grey;
+}
+
+body {
+background-color: #AFEEEE}
+
+content {
+display:block;
+margin-right: 60px;
+ margin-left:60px;
+
+ }
+
+ 
+img.pomme {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+	
+img.pizza {
+display: block;
+margin-left: auto;
+margin-right: auto }
+
+img.vin {
+display: block;
+margin-left: auto;
+margin-right: auto }
+	
+ h1 {
+font-family: Helvetica, sans-serif
+font-weight: bolder;
+}
+           
+nav ul{   
+	      
+  color:white;
+  text-decoration:none;
+  text-align: center;
+  
+  border : none;
+  
+ }
+
+nav li{
+  padding : 5px;
+  padding-left : 65px;
+  padding-right:65px;
+  background-color: grey;
+  margin-top: 15px;
+  margin-left:10px;
+  margin-right:10px;
+  list-style:none;
+  font-size: x-large;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.menu_pcpal {
+	text-align:center;
+}
