@@ -30,10 +30,10 @@ def main():
         # wrap qi App Session with Simulated Pepper     
         wrap = NaoqibulletWrapper.NaoqibulletWrapper(qiApp, pepperSim) # /!\ keep wrap instance to keep thread
 
-        # code example : move head and move base
+       
         qiSession = qiApp.session
         motionService = qiSession.service("ALMotion")  
-
+        #add function here
         move(1,1,motionService)
         #turn(motionService,3.14)
 
