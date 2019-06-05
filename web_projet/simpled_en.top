@@ -5,25 +5,25 @@ u:([Go e:web_projet/Start]) $web_projet/Page0=1 Que voulez-vous déguster ? $web
 
 
 
-    u1:([Pizza e:web_projet/Button1]) $web_projet/Page1=1 De la pizza, gourmand ! Dans quelle corbeille dois-je la placer ? $web_projet/Page2=1 
+    u1:([Pizza e:web_projet/Button1]) $my_object=pizza $web_projet/Page1=1 $my_object, gourmand ! Dans quelle corbeille dois-je la placer ? $web_projet/Page2=1 
    
 	
 
-		u2:([Rouge e:web_projet/Button4]) $web_projet/Page2=1 La rouge , c'est parti ! $web_projet/Page0=1
-		u2:([Bleue e:web_projet/Button5]) $web_projet/Page2=1 La bleue , c'est parti ! $web_projet/Page0=1
-		u2:([Verte e:web_projet/Button6]) $web_projet/Page2=1 La verte , c'est parti ! $web_projet/Page0=1
+		u2:([Rouge e:web_projet/Button4]) $my_basket=rouge $web_projet/Page2=1 La corbeille $my_basket, c'est parti ! $web_projet/Page0=1
+		u2:([Bleue e:web_projet/Button5]) $my_basket=bleue $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
+		u2:([Verte e:web_projet/Button6]) $my_basket=verte $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
 		
-   u1:([Pomme e:web_projet/Button2]) $web_projet/Page1=1 Une pomme, vive les vitamines ! Dans quelle corbeille dois-je la placer ?$web_projet/Page2=1
+   u1:([Pomme e:web_projet/Button2]) $my_object=pomme $web_projet/Page1=1 $my_object, vive les vitamines ! Dans quelle corbeille dois-je la placer ?$web_projet/Page2=1
     
 
 
-		u2:([Rouge e:web_projet/Button4]) $web_projet/Page2=1 La rouge , c'est parti ! $web_projet/Page0=1
-		u2:([Bleue e:web_projet/Button5]) $web_projet/Page2=1 La bleue , c'est parti ! $web_projet/Page0=1
-		u2:([Verte e:web_projet/Button6]) $web_projet/Page2=1 La verte , c'est parti ! $web_projet/Page0=1
+		u2:([Rouge e:web_projet/Button4]) $my_basket=rouge $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
+		u2:([Bleue e:web_projet/Button5]) $my_basket=bleue $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
+		u2:([Verte e:web_projet/Button6]) $my_basket=verte $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
 
-    u1:([Vin e:web_projet/Button3]) $web_projet/Page1=1 Un bon verre de vin ! Dans quelle corbeille dois-je la placer ? $web_projet/Page2=1
+    u1:([Vin e:web_projet/Button3]) $my_object=vin $web_projet/Page1=1 $my_object! Dans quelle corbeille dois-je la placer ? $web_projet/Page2=1
 
 
-		u2:([Rouge e:web_projet/Button4]) $web_projet/Page2=1 La rouge , c'est parti ! $web_projet/Page0=1
-		u2:([Bleue e:web_projet/Button5]) $web_projet/Page2=1 La bleue , c'est parti ! $web_projet/Page0=1
-		u2:([Verte e:web_projet/Button6]) $web_projet/Page2=1 La verte , c'est parti ! $web_projet/Page0=1
+		u2:([Rouge e:web_projet/Button4]) $my_basket=rouge $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
+		u2:([Bleue e:web_projet/Button5]) $my_basket=bleue $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
+		u2:([Verte e:web_projet/Button6]) $my_basket=verte $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1

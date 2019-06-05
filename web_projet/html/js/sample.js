@@ -58,31 +58,37 @@ $(document).ready(function () {
 
     $('#pizza').on('click', function() {
         console.log("click 1");
+	raise('my_object','pizza')
         raise('web_projet/Button1', 1)
     });
 
     $('#pomme').on('click', function() {
         console.log("click 2");
+	raise('my_object','pomme')
         raise('web_projet/Button2', 1)
     });
 
     $('#vin').on('click', function() {
         console.log("click 3");
+	raise('my_object','vin')
         raise('web_projet/Button3', 1)
     });
 
     $('#rouge').on('click', function() {
         console.log("click 4");
+	raise('my_object','rouge')
         raise('web_projet/Button4', 1)
     });
 	
     $('#bleue').on('click', function() {
         console.log("click 5");
+	raise('my_object','bleue')
         raise('web_projet/Button5', 1)
     });
 	
     $('#verte').on('click', function() {
         console.log("click 6");
+	raise('my_object','verte')
         raise('web_projet/Button6', 1)
     });
 

@@ -7,6 +7,7 @@ import argparse
 import sys
 import time
 import signal
+from naoqi import ALProxy
 
 def main(session):
     # Get the service ALTabletService.
@@ -18,6 +19,25 @@ def main(session):
 
     except Exception, e:
         print "Error was: ", e
+
+
+
+    try:
+  # create proxy on ALMemory
+        memProxy = ALProxy("ALMemory","localhost",9559)
+
+  #insertData. Value can be int, float, list, string
+        memProxy.insertData("my_object", "pizza")
+	memProxy.insertData("my_basket", "bleue")
+	memProxy.insertData("choice_end", "0")
+	
+
+  #getData
+        print "The value of myValueName1 is", memProxy.getData("my_object")
+
+    except RuntimeError,e:
+  # catch exception
+        print "error insert data", e
 
 
 
