@@ -1,10 +1,11 @@
 #!/usr/bin/env python
-# coding: utf-8
+#coding: utf-8
 
 import pybullet
 import pybullet_data
 from qibullet import PepperVirtual
 from qibullet import SimulationManager
+from random import*
 
 def deplacement(X,Y,Theta):
     PepperVirtual.getPosition()
@@ -16,31 +17,56 @@ def main():
     pepper = simulation_manager.spawnPepper(client, spawn_ground_plane=True)
 
     pybullet.setAdditionalSearchPath(pybullet_data.getDataPath())
-       
+
+    
+  
     pybullet.loadURDF(
         "table.urdf",
         basePosition=[-2, 0, 0],
         globalScaling=1,
-        physicsClientId=client) 
- 
+       physicsClientId=client) 
+
+    pybullet.loadURDF(
+        "Cagettejaune.urdf",
+        basePosition=[1, -1, 0],
+        globalScaling=1,
+        physicsClientId=client)
+
+    pybullet.loadURDF(
+        "Cagetterouge.urdf",
+        basePosition=[1.5, -1.5, 0],
+        globalScaling=1,
+        physicsClientId=client)
+
+    pybullet.loadURDF(
+       "Cagetteverte.urdf",
+        basePosition=[1.7, -1, 0],
+        globalScaling=1,
+        physicsClientId=client)
+
+
+    position=shuffle(["-0.25","0","0.25"]) 
+
     pybullet.loadURDF(
         "totem.urdf",
-        basePosition=[-1.5, 0, 1],
+        basePosition=[-1.5, position(0), 1],
         globalScaling=1,
         physicsClientId=client)
   
     pybullet.loadURDF(
         "totempomme.urdf",
-        basePosition=[-1.5, -0.25, 1],
+        basePosition=[-1.5, position(1), 1],
         globalScaling=1,
         physicsClientId=client)
 
     pybullet.loadURDF(
         "totemwine.urdf",
-        basePosition=[-1.5, 0.25, 1],
+        basePosition=[-1.5, position(2), 1],
         globalScaling=1,
         physicsClientId=client)
-    
+  
+   
+      
 
     pepper.showLaser(True)
     pepper.subscribeLaser()

@@ -73,7 +73,7 @@
     <origin xyz="0 0 0.1"/>
   </joint>
 
-  <link name="duck_stuff">
+  <link name="pizza_stuff">
     <contact>
       <lateral_friction value="1.0"/>
       <rolling_friction value="0.0"/>
@@ -88,7 +88,7 @@
     <visual>
       <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="duck.obj" scale=".07 .07 .07"/>
+        <mesh filename="pizza.obj" scale=".05 .05 .05"/>
       </geometry>
        <material name="yellow">
         <color rgba="1 1 0.4 1"/>
@@ -97,14 +97,14 @@
     <collision>
       <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
-	 	<mesh filename="duck_vhacd.obj" scale=".07 .07 .07"/>
+	 	<mesh filename="pizza.obj" scale=".05 .05 .05"/>
       </geometry>
     </collision>
   </link>
 
     <joint name="jfixed_stuff" type="fixed">
     <parent link="top_cylinder"/>
-    <child link="duck_stuff"/>
+    <child link="pizza_stuff"/>
     <origin rpy="0 0 0" xyz="0 0 0.01"/>
   </joint>
 

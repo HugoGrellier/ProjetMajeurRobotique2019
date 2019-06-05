@@ -88,7 +88,7 @@
     <visual>
       <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="glass.obj" scale=".02 .02 .02"/>
+        <mesh filename="glass.obj" scale=".01 .01 .01"/>
       </geometry>
        <material name="yellow">
         <color rgba="1 1 0.4 1"/>
@@ -97,7 +97,7 @@
     <collision>
       <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
-	 	<mesh filename="glass.obj" scale=".025 .025 .025"/>
+	 	<mesh filename="glass.obj" scale=".01 .01 .01"/>
       </geometry>
     </collision>
   </link>
@@ -105,7 +105,7 @@
     <joint name="jfixed_stuff" type="fixed">
     <parent link="top_cylinder"/>
     <child link="wine_stuff"/>
-    <origin rpy="0 0 0" xyz="0 0 0.01"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>#0.001
   </joint>
 
 
