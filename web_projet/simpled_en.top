@@ -1,34 +1,29 @@
 topic: ~simpled()
 language: enu
 
-u:([Go e:web_projet/Start]) $web_projet/Page0= Dîtes ou cliquez sur GO pour démarrer ! $web_projet/Page1=1
+u:([Go e:web_projet/Start]) $web_projet/Page0=1 Que voulez-vous déguster ? $web_projet/Page1=1
 
 
-   	u1:([Pomme e:web_projet/Button2]) $web_projet/Page1=1 Une pomme,vive les vitamines! $web_projet/Page2=1
+
+    u1:([Pizza e:web_projet/Button1]) $web_projet/Page1=1 De la pizza, gourmand ! Dans quelle corbeille dois-je la placer ? $web_projet/Page2=1 
+   
 	
 
-		u2:([Rouge e:web_projet/Button4]) $web_projet/Page2=1 La rouge ! 
-		u2:([Bleue e:web_projet/Button5]) $web_projet/Page2=1 La bleue !
-		u2:([Verte e:web_projet/Button6]) $web_projet/Page2=1 La verte !
+		u2:([Rouge e:web_projet/Button4]) $web_projet/Page2=1 La rouge , c'est parti ! $web_projet/Page0=1
+		u2:([Bleue e:web_projet/Button5]) $web_projet/Page2=1 La bleue , c'est parti ! $web_projet/Page0=1
+		u2:([Verte e:web_projet/Button6]) $web_projet/Page2=1 La verte , c'est parti ! $web_projet/Page0=1
 		
-
-    u1:([Pizza e:web_projet/Button3]) $web_projet/Page1=1 De la pizza, gourmand ! $web_projet/Page2=1
-
-
-		u2:([Rouge e:web_projet/Button4]) $web_projet/Page2=1 La rouge ! 
-		u2:([Bleue e:web_projet/Button5]) $web_projet/Page2=1 La bleue !
-		u2:([Verte e:web_projet/Button6]) $web_projet/Page2=1 La verte !
-
-    u1:([Vin e:web_projet/Button3]) $web_projet/Page1=1 Un bon verre de vin ! $web_projet/Page2=1
+   u1:([Pomme e:web_projet/Button2]) $web_projet/Page1=1 Une pomme, vive les vitamines ! Dans quelle corbeille dois-je la placer ?$web_projet/Page2=1
+    
 
 
-		u2:([Rouge e:web_projet/Button4]) $web_projet/Page2=1 La rouge ! 
-		u2:([Bleue e:web_projet/Button5]) $web_projet/Page2=1 La bleue !
-		u2:([Verte e:web_projet/Button6]) $web_projet/Page2=1 La verte !
+		u2:([Rouge e:web_projet/Button4]) $web_projet/Page2=1 La rouge , c'est parti ! $web_projet/Page0=1
+		u2:([Bleue e:web_projet/Button5]) $web_projet/Page2=1 La bleue , c'est parti ! $web_projet/Page0=1
+		u2:([Verte e:web_projet/Button6]) $web_projet/Page2=1 La verte , c'est parti ! $web_projet/Page0=1
+
+    u1:([Vin e:web_projet/Button3]) $web_projet/Page1=1 Un bon verre de vin ! Dans quelle corbeille dois-je la placer ? $web_projet/Page2=1
 
 
-
-
-
-	
-
+		u2:([Rouge e:web_projet/Button4]) $web_projet/Page2=1 La rouge , c'est parti ! $web_projet/Page0=1
+		u2:([Bleue e:web_projet/Button5]) $web_projet/Page2=1 La bleue , c'est parti ! $web_projet/Page0=1
+		u2:([Verte e:web_projet/Button6]) $web_projet/Page2=1 La verte , c'est parti ! $web_projet/Page0=1

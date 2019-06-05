@@ -4,7 +4,7 @@ $(document).ready(function () {
     $('#page_empty').show();
     $('#page_choix').hide();
     $('#page_corbeille').hide();
-    $('#page_go').hide();
+    
 
 
     session.service("ALMemory").done(function(ALMemory) {
@@ -15,7 +15,7 @@ $(document).ready(function () {
                     $('#page_empty').show();
    		    $('#page_choix').hide();
     		    $('#page_corbeille').hide();
-		    $('#page_go').hide();
+		    
             });
         });
 
@@ -26,7 +26,7 @@ $(document).ready(function () {
               		$('#page_empty').hide();
    			$('#page_choix').show();
     		        $('#page_corbeille').hide();
-			$('#page_go').hide();
+			
 
             });
         });
@@ -37,21 +37,12 @@ $(document).ready(function () {
                $('#page_empty').hide();
    	       $('#page_choix').hide();
     	       $('#page_corbeille').show();
-	       $('#page_go').hide();
+	     
             });
         });
 
-	ALMemory.subscriber("web_projet/Page2").done(function(subscriber) {
-
-            subscriber.signal.connect(function() {
-               $('#page_empty').hide();
-   	       $('#page_choix').hide();
-    	       $('#page_corbeille').hide();
-	       $('#page_go').show();
-            });
-        });
-    });
 	
+	});
 
     function raise(event, value) {
         session.service("ALMemory").done(function(ALMemory) {
@@ -71,7 +62,7 @@ $(document).ready(function () {
     });
 
     $('#pomme').on('click', function() {
-        console.log("click 2");s
+        console.log("click 2");
         raise('web_projet/Button2', 1)
     });
 
