@@ -80,9 +80,9 @@ $(document).ready(function () {
         raise('web_projet/Button4', 1)
     });
 	
-    $('#bleue').on('click', function() {
+    $('#jaune').on('click', function() {
         console.log("click 5");
-	raise('my_object','bleue')
+	raise('my_object','jaune')
         raise('web_projet/Button5', 1)
     });
 	
