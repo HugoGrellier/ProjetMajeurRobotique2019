@@ -5,13 +5,15 @@
 
 import sys
 import qi
-
+import time
+import pybullet
+import pybullet_data
 from qibullet import SimulationManager
 from qibullet import PepperVirtual
 from NaoqibulletWrapper import NaoqibulletWrapper
 from takePic import *
 from mouvement import *
-        
+from numpy import *     
 
 
 def main():
@@ -30,12 +32,46 @@ def main():
         # wrap qi App Session with Simulated Pepper     
         wrap = NaoqibulletWrapper.NaoqibulletWrapper(qiApp, pepperSim) # /!\ keep wrap instance to keep thread
 
+        pybullet.setAdditionalSearchPath(pybullet_data.getDataPath())
        
+        pybullet.loadURDF(
+                "table.urdf",
+                basePosition=[-2, 0, 0],
+                globalScaling=1,
+                physicsClientId=client_id) 
+        
+        pybullet.loadURDF(
+                "totem.urdf",
+                basePosition=[-1.5, 0, 1],
+                globalScaling=0.7,
+                physicsClientId=client_id)
+        
+        pybullet.loadURDF(
+                "totempomme.urdf",
+                basePosition=[-1.5, -0.25, 1],
+                globalScaling=0.7,
+                physicsClientId=client_id)
+
+        pybullet.loadURDF(
+                "totemwine.urdf",
+                basePosition=[-1.5, 0.25, 1],
+                globalScaling=0.7,
+                physicsClientId=client_id)
+        
         qiSession = qiApp.session
         motionService = qiSession.service("ALMotion")  
         #add function here
-        move(1,1,motionService)
-        #turn(motionService,3.14)
+        init_cam(pepperSim)
+        motionService.setAngles(["LShoulderPitch","RShoulderPitch"],[1,1],[1,1])
+        #take photo
+        turn(motionService,pi)
+        
+        take_picture(pepperSim)
+        #go to the object
+        move_right_obj(motionService)
+        #go to the box
+
+        move_to_Blue(motionService)
 
         # block until stop is called.
         qiApp.run()

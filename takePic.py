@@ -10,8 +10,8 @@ import detect
 image_name='image.png' 
 
 def init_cam(pepper):
-    pepper.subscribeCamera(PepperVirtual.ID_CAMERA_BOTTOM)
-    return ok
+    pepper.subscribeCamera(PepperVirtual.ID_CAMERA_TOP)
+    return True
 
 def take_picture(pepper):
     img = pepper.getCameraFrame() #capture camera frame
