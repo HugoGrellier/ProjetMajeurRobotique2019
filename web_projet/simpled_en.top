@@ -9,21 +9,54 @@ u:([Go e:web_projet/Start]) $web_projet/Page0=1 Que voulez-vous déguster ? $web
    
 	
 
-		u2:([Rouge e:web_projet/Button4]) $my_basket=rouge $web_projet/Page2=1 La corbeille $my_basket, c'est parti ! $web_projet/Page0=1
-		u2:([Jaune e:web_projet/Button5]) $my_basket=jaune $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
-		u2:([Verte e:web_projet/Button6]) $my_basket=verte $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
+		u2:([Rouge e:web_projet/Button4]) $my_basket=rouge $web_projet/Page2=1 La corbeille $my_basket, c'est parti !  $web_projet/Page3=1
+
+			u3:([Terminer e:web_projet/Button7]) $my_choice=1 $web_projet/Page3=1 C'est parti !! $web_projet/Page4=1
+			u3:([Recommencer e:web_projet/Button8]) $my_choice=0 $web_projet/Page3=1 On recommence! $web_projet/Page0=1
+
+		u2:([Jaune e:web_projet/Button5]) $my_basket=jaune $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page3=1
+
+			u3:([Terminer e:web_projet/Button7]) $my_choice=1 $web_projet/Page3=1 C'est parti  !! $web_projet/Page4=1
+			u3:([Recommencer e:web_projet/Button8]) $my_choice=0 $web_projet/Page3=1 On recommence! $web_projet/Page0=1
+
+		u2:([Verte e:web_projet/Button6]) $my_basket=verte $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page3=1
+
+			u3:([Terminer e:web_projet/Button7]) $my_choice=1 $web_projet/Page3=1 C'est parti !! $web_projet/Page4=1
+			u3:([Recommencer e:web_projet/Button8]) $my_choice=0 $web_projet/Page3=1 On recommence! $web_projet/Page0=1
 		
    u1:([Pomme e:web_projet/Button2]) $my_object=pomme $web_projet/Page1=1 $my_object, vive les vitamines ! Dans quelle corbeille dois-je la placer ?$web_projet/Page2=1
     
 
 
-		u2:([Rouge e:web_projet/Button4]) $my_basket=rouge $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
-		u2:([Jaune e:web_projet/Button5]) $my_basket=jaune $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
-		u2:([Verte e:web_projet/Button6]) $my_basket=verte $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
+		u2:([Rouge e:web_projet/Button4]) $my_basket=rouge $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page3=1
+
+	u		u3:([Terminer e:web_projet/Button7]) $my_choice=1 $web_projet/Page3=1 C'est parti !! $web_projet/Page4=1
+			u3:([Recommencer e:web_projet/Button8]) $my_choice=0 $web_projet/Page3=1 On recommence! $web_projet/Page0=1
+
+		u2:([Jaune e:web_projet/Button5]) $my_basket=jaune $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page3=1
+
+			u3:([Terminer e:web_projet/Button7]) $my_choice=1 $web_projet/Page3=1 C'est parti !! $web_projet/Page4=1
+			u3:([Recommencer e:web_projet/Button8]) $my_choice=0 $web_projet/Page3=1 On recommence! $web_projet/Page0=1
+
+		u2:([Verte e:web_projet/Button6]) $my_basket=verte $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page3=1
+
+			u3:([Terminer e:web_projet/Button7]) $my_choice=1 $web_projet/Page3=1 C'est parti !! $web_projet/Page4=1
+			u3:([Recommencer e:web_projet/Button8]) $my_choice=0 $web_projet/Page3=1 On recommence! $web_projet/Page0=1
 
     u1:([Vin e:web_projet/Button3]) $my_object=vin $web_projet/Page1=1 $my_object! Dans quelle corbeille dois-je la placer ? $web_projet/Page2=1
 
 
-		u2:([Rouge e:web_projet/Button4]) $my_basket=rouge $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
-		u2:([Jaune e:web_projet/Button5]) $my_basket=jaune $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
-		u2:([Verte e:web_projet/Button6]) $my_basket=verte $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page0=1
+		u2:([Rouge e:web_projet/Button4]) $my_basket=rouge $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page3=1
+
+			u3:([Terminer e:web_projet/Button7]) $my_choice=1 $web_projet/Page3=1 C'est parti !! $web_projet/Page4=1
+			u3:([Recommencer e:web_projet/Button8]) $my_choice=0 $web_projet/Page3=1 On recommence! $web_projet/Page0=1
+
+		u2:([Jaune e:web_projet/Button5]) $my_basket=jaune $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page3=1
+
+			u3:([Terminer e:web_projet/Button7]) $my_choice=1 $web_projet/Page3=1 C'est parti !! $web_projet/Page4=1
+			u3:([Recommencer e:web_projet/Button8]) $my_choice=0 $web_projet/Page3=1 On recommence! $web_projet/Page0=1
+
+		u2:([Verte e:web_projet/Button6]) $my_basket=verte $web_projet/Page2=1 La corbeille $my_basket , c'est parti ! $web_projet/Page3=1
+
+			u3:([Terminer e:web_projet/Button7]) $my_choice=1 $web_projet/Page3=1 C'est parti !! $web_projet/Page4=1
+			u3:([Recommencer e:web_projet/Button8]) $my_choice=0 $web_projet/Page3=1 On recommence! $web_projet/Page0=1

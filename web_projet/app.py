@@ -29,7 +29,7 @@ def main(session):
   #insertData. Value can be int, float, list, string
         memProxy.insertData("my_object", "pizza")
 	memProxy.insertData("my_basket", "bleue")
-	memProxy.insertData("choice_end", "0")
+	memProxy.insertData("my_choice", "0")
 	
 
   #getData

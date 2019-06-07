@@ -4,6 +4,8 @@ $(document).ready(function () {
     $('#page_empty').show();
     $('#page_choix').hide();
     $('#page_corbeille').hide();
+    $('#page_fin').hide();
+    $('#page_parti').hide();
     
 
 
@@ -15,6 +17,8 @@ $(document).ready(function () {
                     $('#page_empty').show();
    		    $('#page_choix').hide();
     		    $('#page_corbeille').hide();
+		    $('#page_fin').hide();
+	            $('#page_parti').hide();
 		    
             });
         });
@@ -26,6 +30,8 @@ $(document).ready(function () {
               		$('#page_empty').hide();
    			$('#page_choix').show();
     		        $('#page_corbeille').hide();
+			$('#page_fin').hide();
+  			$('#page_parti').hide();
 			
 
             });
@@ -37,6 +43,32 @@ $(document).ready(function () {
                $('#page_empty').hide();
    	       $('#page_choix').hide();
     	       $('#page_corbeille').show();
+	       $('#page_fin').hide();
+  	       $('#page_parti').hide();
+	     
+            });
+        });
+
+	ALMemory.subscriber("web_projet/Page3").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+               $('#page_empty').hide();
+   	       $('#page_choix').hide();
+    	       $('#page_corbeille').hide();
+	       $('#page_fin').show();
+  	       $('#page_parti').hide();
+	     
+            });
+        });
+
+	ALMemory.subscriber("web_projet/Page4").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+               $('#page_empty').hide();
+   	       $('#page_choix').hide();
+    	       $('#page_corbeille').hide();
+	       $('#page_fin').hide();
+  	       $('#page_parti').show();
 	     
             });
         });
@@ -90,6 +122,18 @@ $(document).ready(function () {
         console.log("click 6");
 	raise('my_object','verte')
         raise('web_projet/Button6', 1)
+    });
+
+    $('#end').on('click', function() {
+        console.log("click 7");
+	raise('my_choice','1')
+        raise('web_projet/Button7', 1)
+    });
+
+    $('#restart').on('click', function() {
+        console.log("click 8");
+	raise('my_choice','0')
+        raise('web_projet/Button8', 1)
     });
 
 

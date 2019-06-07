@@ -93,6 +93,7 @@ def almemory():
 	#get data. Val can be int, float, list, string
 	val1 = memProxy.getData("my_object")
 	val2 = memProxy.getData("my_basket") 
+	val3 = memProxy.getData("my_choice") 
 
 if __name__ == "__main__":
 main()
