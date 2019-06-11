@@ -24,7 +24,7 @@ u:([Go e:web_projet/Start]) $web_projet/Page0=1 Que voulez-vous déguster ? $web
 			u3:([Terminer Oui Fin e:web_projet/Button7]) $my_choice=1 $web_projet/Page3=1 C'est parti !! $web_projet/Page4=1
 			u3:([Recommencer Non Refaire e:web_projet/Button8]) $my_choice=0 $web_projet/Page3=1 On recommence! $web_projet/Page0=1
 		
-   u1:([Pomme e:web_projet/Button2]) $my_object=pomme $web_projet/Page1=1 $my_object, vive les vitamines ! Dans quelle corbeille dois-je la placer ?$web_projet/Page2=1
+   u1:([Banane e:web_projet/Button2]) $my_object=banane $web_projet/Page1=1 $my_object, vive les vitamines ! Dans quelle corbeille dois-je la placer ?$web_projet/Page2=1
     
 
 

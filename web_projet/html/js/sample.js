@@ -114,9 +114,9 @@ $(document).ready(function () {
         raise('web_projet/Button1', 1) 
     });
 
-    $('#pomme').on('click', function() {
+    $('#banane').on('click', function() {
         console.log("click 2");
-	raise('my_object','pomme')
+	raise('my_object','banane')
         raise('web_projet/Button2', 1)
     });
 
