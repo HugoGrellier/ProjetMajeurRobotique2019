@@ -18,18 +18,24 @@
 
 </head>
 
-  <body>
+<!-- Dans le "body" on crée plusieurs divisions qui vont représenter les différentes pages affichées
+ sur la tablette du robot, chaque page possède des liens renvoyant à d'autres divisions et donc à 
+ l'affichage d'une autre page sur la tablette   -->
 
+  <body>
+<!-- Page de démarrage de la simulation -->
     <div id="page_empty">
-	<a id="go" href="#page_choix">
+	<a id="go" href="#page_choix"> <!-- Lorsque l'on appuie sur le bouton "go", on est envoyé à la page choix -->
     	<img src="go.png" height="300px" widht="300px"/><br/></a>
 	<center> Commençons ! </center>
 	
     </div>
+<!-- Page du choix de l'objet que le robot devra aller chercher -->
 
     <div id="page_choix">
 	    <h1> Bonjour ! <br> Que voulez-vous d&eacute;guster ? </br> </h1>
 	    <center>    
+		<!-- Chaque bouton représentant les pbjets renvoients sur la page du choix de la corbeille -->
 		<a id="pizza" href="#page_corbeille">
     	<img src="pizza.jpg" height="300px" widht="300px"/><br/></a>
 		
@@ -43,21 +49,23 @@
 	    </center>
     </div>
 
+<!-- Page de choix de la corbeille où le robot devra déposer l'objet -->
 <div id="page_corbeille">
 <h1> Dans quelle caisse souhaites tu placer l'objet? </h1>
 <center>    
-		<a id="rouge" href="#page_empty">
+		<a id="rouge" href="#page_fin">
     	<img src="corbeille_rouge.jpg" height="200px" widht="200px"/><br/></a>
 		
-		<a id="jaune" href="#page_empty">
+		<a id="jaune" href="#page_fin">
     	<img src="corbeille_jaune.jpg" height="200px" widht="200px"/><br/></a>
 
-		<a id="verte" href="#page_empty">
+		<a id="verte" href="#page_fin">
     	<img src="verte.jpg" height="200px" widht="200px"/><br/></a>
 
 </center>
 </div>
-
+<!-- Cette dernier page permet de valider les choix effectués précédemment
+ou de recommencer  -->
 <div id="page_fin">
 <h1> Ce choix te convient ? </h1>
 <center>    
@@ -69,6 +77,8 @@
 		
 </center>
 </div>
+
+<!-- Cette page annonce que les choix sont terminés et validés et que la simulation peut démarrer -->
 
 <div id="page_parti">
 <h1> C'est parti !! </h1>

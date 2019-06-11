@@ -1,5 +1,8 @@
 $(document).ready(function () {
-    session = new QiSession("127.0.0.1:8002", "1.0");
+    session = new QiSession("127.0.0.1:8002", "1.0"); // création d'une session Qi
+
+// Au démarrage de la tablette on choisi, ci-dessous, de montrer la page "page_empty" 
+//(celle avec le bouton "GO")	
 
     $('#page_empty').show();
     $('#page_choix').hide();
@@ -8,11 +11,14 @@ $(document).ready(function () {
     $('#page_parti').hide();
     
 
-
+// On définit ensuite un certain nombre de pages caractérisées par le choix de montrer (.show())
+// ou de cacher (. hide() ) une des divisions défini dans le html (index.html). 
     session.service("ALMemory").done(function(ALMemory) {
 
         ALMemory.subscriber("web_projet/Page0").done(function(subscriber) {
-
+			
+ // on montre la page empty
+			
             subscriber.signal.connect(function() {
                     $('#page_empty').show();
    		    $('#page_choix').hide();
@@ -25,7 +31,9 @@ $(document).ready(function () {
 
 
         ALMemory.subscriber("web_projet/Page1").done(function(subscriber) {
-
+			
+ // on montre la page du choix des objets
+			
             subscriber.signal.connect(function() {
               		$('#page_empty').hide();
    			$('#page_choix').show();
@@ -39,7 +47,8 @@ $(document).ready(function () {
 
         ALMemory.subscriber("web_projet/Page2").done(function(subscriber) {
 
-            subscriber.signal.connect(function() {
+ // on montre la page du choix de la corbeille  
+			subscriber.signal.connect(function() {
                $('#page_empty').hide();
    	       $('#page_choix').hide();
     	       $('#page_corbeille').show();
@@ -51,6 +60,8 @@ $(document).ready(function () {
 
 	ALMemory.subscriber("web_projet/Page3").done(function(subscriber) {
 
+// on montre la page de la validation des choix
+		
             subscriber.signal.connect(function() {
                $('#page_empty').hide();
    	       $('#page_choix').hide();
@@ -62,6 +73,8 @@ $(document).ready(function () {
         });
 
 	ALMemory.subscriber("web_projet/Page4").done(function(subscriber) {
+		
+// on montre la page de fin, celle qui s'affiche si les choix ont été validés
 
             subscriber.signal.connect(function() {
                $('#page_empty').hide();
@@ -76,6 +89,10 @@ $(document).ready(function () {
 	
 	});
 
+	
+// on définit ci-dessous un certain nombre de cliques; en effet, chaque clique va être défini ici
+// puis utilisé dans le ".top" pour mener à bien notre scénario
+	
     function raise(event, value) {
         session.service("ALMemory").done(function(ALMemory) {
             ALMemory.raiseEvent(event, value);
@@ -84,14 +101,17 @@ $(document).ready(function () {
 
     $('#go').on('click', function() {
         console.log("click Start");
-        raise('web_projet/Start', 1)
+        raise('web_projet/Start', 1) 
     });
 
 
     $('#pizza').on('click', function() {
         console.log("click 1");
-	raise('my_object','pizza')
-        raise('web_projet/Button1', 1)
+	raise('my_object','pizza')  //De plus, on définit un ALMemory afin de récupérer la valeur 
+							   //du clique et ainsi de savoir quel objet et quelle corbeille ont été choisis pour que le robot puisse
+							  //effectuer sa tâche
+		
+        raise('web_projet/Button1', 1) 
     });
 
     $('#pomme').on('click', function() {
@@ -132,7 +152,7 @@ $(document).ready(function () {
 
     $('#restart').on('click', function() {
         console.log("click 8");
-	raise('my_choice','0')
+	raise('my_choice','0') // On définit un ALMemory "my_choice" nous permettant de savoir si la simulation peut démarrer
         raise('web_projet/Button8', 1)
     });
 
