@@ -88,16 +88,16 @@
     <visual>
       <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="glass.obj" scale=".01 .01 .01"/>
+        <mesh filename="Wine_Bottle_White.obj" scale="1 1 1"/>
       </geometry>
-       <material name="yellow">
-        <color rgba="1 1 0.4 1"/>
+       <material name="wine">
+        <color rgba="0.52 0.18 0.106 1"/>
       </material>
     </visual>
     <collision>
       <origin rpy="1.57 0 0" xyz="0 0 0"/>
       <geometry>
-	 	<mesh filename="glass.obj" scale=".01 .01 .01"/>
+	 	<mesh filename="Wine_Bottle_White.obj" scale="1 1 1"/>
       </geometry>
     </collision>
   </link>

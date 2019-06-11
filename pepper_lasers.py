@@ -14,24 +14,44 @@ def deplacement(X,Y,Theta):
 def main():
     simulation_manager = SimulationManager()
     client = simulation_manager.launchSimulation(gui=True)
-    pepper = simulation_manager.spawnPepper(client, spawn_ground_plane=True)
-
+    coord =[-2, 5, 0]
+    pepper = simulation_manager.spawnPepper(client, spawn_ground_plane=False)
+    pepper2 = simulation_manager.spawnPepper(client, coord, spawn_ground_plane=False)
+    
     pybullet.setAdditionalSearchPath(pybullet_data.getDataPath())
 
-    
-  
+    pybullet.loadURDF(
+        "plane.urdf",
+        basePosition=[0, 0, 0],
+        globalScaling=1,
+       physicsClientId=client)
+
     pybullet.loadURDF(
         "table.urdf",
         basePosition=[-2, 0, 0],
+        #baseOrientation=pybullet.getQuaternionFromEuler([1.57, 0, 0]),
         globalScaling=1,
-       physicsClientId=client) 
- 
+       physicsClientId=client)
 
     pybullet.loadURDF(
-       "bar.urdf",
-        basePosition=[1.7, -1, 0],
+        "bar.urdf",
+        basePosition=[0, 5, 0.5],
+        baseOrientation=pybullet.getQuaternionFromEuler([1.57, 0, 0]),
         globalScaling=1,
-        physicsClientId=client)
+       physicsClientId=client) 
+
+    pybullet.loadURDF(
+        "robot.urdf",
+        basePosition=[-2, 5, 0],
+        baseOrientation=pybullet.getQuaternionFromEuler([0, 0, 1.15]),
+        globalScaling=1,
+       physicsClientId=client)
+    """ pybullet.loadURDF(
+        "hat.urdf",
+        basePosition=[-2, 5, 0],
+        baseOrientation=pybullet.getQuaternionFromEuler([0, 0, 1.15]),
+        globalScaling=1,
+       physicsClientId=client)   """
 
     pybullet.loadURDF(
         "Cagettejaune.urdf",
@@ -51,6 +71,12 @@ def main():
         globalScaling=1,
         physicsClientId=client)
 
+    pybullet.loadURDF(
+       "deco.urdf",
+        basePosition=[0, 6, 1.5],
+        globalScaling=1,
+        physicsClientId=client)
+
     position=[-0.25,0.0,0.25]
     i=random.choice(position) 
 
@@ -60,7 +86,7 @@ def main():
      	   globalScaling=1,
       	  physicsClientId=client)
     del position[position.index(i)]
-   
+  
     j=random.choice(position)
     pybullet.loadURDF(
         "totempomme.urdf",
@@ -75,7 +101,7 @@ def main():
         basePosition=[-1.5, position[0], 1],
         globalScaling=1,
         physicsClientId=client) 
-      
+     
 
     pepper.showLaser(True)
     pepper.subscribeLaser()

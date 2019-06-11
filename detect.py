@@ -4,6 +4,7 @@
 import Algorithmia
 from Algorithmia.acl import ReadAcl, AclType
 
+
 def Algo_detect(photo_name,score):
 	
 	apiKey = "simUb6EKrYK8xAnJp1gUqqhzTQm1" 
@@ -49,7 +50,32 @@ def Algo_detect(photo_name,score):
 	except Exception as error:
 	    # Algorithm error if, for example, the input is not correctly formatted
 	    result=0
-	    print(error)   
+	    print(error)
    	return result
 
-Algo_detect("image.png",0.5)
+result=Algo_detect("image.png",0.1)
+
+def sort(result):
+	sortedResult=[]
+	flagPizza,flagBanana,flagBottle=0,0,0
+	for i in range(len(result.get('boxes'))):
+		label=result.get('boxes')[i].get('label')
+		if (label=='hot dog' or label=='cake' or label=='sandwich' or label=='pizza') and flagPizza==0:
+			x1=result.get('boxes')[i].get('coordinates').get('x1')
+			sortedResult.append([x1,'pizza'])
+			flagPizza=1
+		if (label=='bottle' or label=='vase') and flagBottle==0:
+			x1=result.get('boxes')[i].get('coordinates').get('x1')
+			sortedResult.append([x1,'bottle'])
+			flagBottle=1
+		if label=='banana' and flagBanana==0:
+			x1=result.get('boxes')[i].get('coordinates').get('x1')
+			sortedResult.append([x1,'banana'])
+			flagBanana=1
+	print(sortedResult)
+	sortedResult.sort()
+	print(sortedResult)
+	
+	return sortedResult
+
+sort(result)

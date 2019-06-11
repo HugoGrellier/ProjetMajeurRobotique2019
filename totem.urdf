@@ -86,18 +86,18 @@
        <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9"/>
     </inertial>
     <visual>
-      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -1.57" xyz="0 0 0.07"/>
       <geometry>
-        <mesh filename="pizza.obj" scale=".05 .05 .05"/>
+        <mesh filename="pizzatexturée4.obj" scale=".05 .05 .05"/>
       </geometry>
        <material name="yellow">
         <color rgba="1 1 0.4 1"/>
       </material>
     </visual>
     <collision>
-      <origin rpy="1.57 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -1.57" xyz="0 0 0.07"/>
       <geometry>
-	 	<mesh filename="pizza.obj" scale=".05 .05 .05"/>
+	 	<mesh filename="pizzatexturée4.obj" scale=".05 .05 .05"/>
       </geometry>
     </collision>
   </link>
